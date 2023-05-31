@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html lang='zh-CN'>
 <head>
@@ -13,7 +13,7 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <style>
         body {
-            background-image: url({% static 'images/reg_bg.jpg' %});
+
             background-size: 100%;
             background-repeat: no-repeat;
         }
@@ -27,14 +27,14 @@
             background: #00b4ef;
         }
 
-        .form-horizontal {
+        .form-horizontal {/*头文字样式*/
             background: #fff;
             padding-bottom: 40px;
             border-radius: 15px;
             text-align: center;
         }
 
-        .form-horizontal .heading {
+        .form-horizontal .heading {/*头文字样式*/
             display: block;
             font-size: 35px;
             font-weight: 700;
@@ -49,7 +49,7 @@
             position: relative;
         }
 
-        .form-horizontal .form-control {
+        .form-horizontal .form-control {/*输入框样式*/
             background: #f0f0f0;
             border: none;
             border-radius: 20px;
@@ -59,8 +59,9 @@
             transition: all 0.3s ease 0s;
         }
 
+
         .form-horizontal .form-control:focus {
-            background: #e0e0e0;
+            background: #00dbef;
             box-shadow: none;
             outline: 0 none;
         }
@@ -114,7 +115,7 @@
 
         .form-horizontal .main-checkbox label:after {
             content: "";
-            width: 10px;
+            width: 100px;
             height: 5px;
             position: absolute;
             top: 5px;
@@ -144,9 +145,9 @@
             text-transform: capitalize;
         }
 
-        .form-horizontal .btn {
+        .form-horizontal .btn {/*登录按钮*/
             float: right;
-            font-size: 14px;
+            font-size: 20px;
             color: #fff;
             background: #00b4ef;
             border-radius: 30px;
@@ -171,27 +172,184 @@
         }
     </style>
 </head>
-<body>
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
-            <form class="form-horizontal" action='{% url "login" %}' method='POST'>
-                {% csrf_token %}
-                <span class="heading"><a href="{% url 'index' %}">推荐系统</a> - 用户登录</span>
-                <span style='color:red;'>{{ errormsg }}</span>
-                {% for field in form %}
-                    <div class="form-group">
-                        {{ field.errors }}
-                        {{ field }}
-                    </div>
-                {% endfor %}
-                <div class="form-group">
-                    <span class=" text fa fa-mail-forward">没有账号？<a href="{% url 'register' %}">点此注册！</a></span>
+            <form class="form-horizontal" action="/login/" method="POST">
+                <input type="hidden" name="csrfmiddlewaretoken" value="9uexaQHyDKGILiBx1XlNy16PGAMwhBUaunGo6bpJvugx9SHsglJj9OySYHgVOT0I">
+                <span class="heading"><a href="/">推荐系统</a> - 用户登录</span>
+                <span style="color:red;"></span>
+
+                    <div class="form-item">
+
+      <input type="username" name="username" placeholder="用户名"  id="username" class="form-style" autocomplete="  " required>
+{#                        <label class="input-label">用户名</label>#}
+      <span class="error">{{form.username.errors}}</span>
+</div>
+
+<div class="form-item">
+
+  <input type="password" name="password" placeholder="密码" id="password" class="form-style" autocomplete="  " required id="id_password">
+{#  <label class="input-label">密码</label>#}
+    <span class="error">{{form.password.errors}}</span>
+</div>
+                 <div class="form-group">
+                    <p class="pull-left"><a href="/register/"><small>注册</small></a></p>
                     <button type="submit" class="btn btn-default">登录</button>
+                 </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<style>
+{#.form-item::placeholder {#}
+{#        color:transparent;#}
+{#    }#}
+{#.form-item{#}
+{#    position:relative;#}
+{#}#}
+{#.input-label{#}
+{#    position:absolute;#}
+{#    left:16px;top:14px;#}
+{#    pointer-events: none;#}
+{#}#}
+{#.input-fill:not(:placeholder-shown)~.input-label,#}
+{#.input-fill:focus ~ .input-label{#}
+{#    transform:scale(0.75) translate(0,-32px);#}
+{#}#}
+
+div.form-item{
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+ }
+
+ input{transition: all .2s ease;}
+ input.form-style{
+  position: relative;
+     color:#8a8a8a;
+  width: 100%;
+  height: 44px;
+  padding: 5px 5%;
+  border:1px solid #ccc;
+  -moz-border-radius: 27px;
+  -webkit-border-radius: 27px;
+  border-radius: 27px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #fff;
+  font-family:'HelveticaNeue','Arial', sans-serif;
+  font-size: 105%;
+  letter-spacing: .8px;
+
+}
+
+div#form{
+	position: absolute;
+	width:360px;
+	height:320px;
+	height:auto;
+	background-color: #fff;
+	margin:auto;
+	border-radius: 5px;
+	padding:20px;
+	left:50%;
+	top:50%;
+	margin-left:-180px;
+	margin-top:-200px;
+}
+div.form-item .form-style:focus{
+  outline: none;
+  border:1px solid #58bff6;
+  color:#58bff6;
+}
+
+div.form-item p.formLabel {
+  position: absolute;
+  left:26px;
+  top:2px;
+  transition:all .4s ease;
+  color:#bbb;
+  }
+
+.formTop{
+  top:-22px !important;
+  left:26px;
+  background-color: #fff;
+  padding:0 5px; font-size: 14px;
+  color:#58bff6 !important;
+}
+
+.formStatus{
+  color:#8a8a8a !important;
+}
+
+div.form-item .form-style:focus{
+  outline: none;
+  border:1px solid #58bff6;
+  color:#58bff6;
+}
+
+div.form-item p.formLabel {
+  position: absolute;
+  left:26px;
+  top:2px;
+  transition:all .4s ease;
+  color:#bbb;
+  }
+
+.formTop{
+    top:-22px !important;
+    left:26px;
+    background-color: #fff;
+    padding:0 5px;
+    font-size: 14px;
+    color:#58bff6 !important;
+}
+
+.formStatus{
+  color:#58bff6 !important;
+}
+
+.pull-left{
+    position: relative;
+    font-size: 30px;
+}
+
+.pull-left a{
+  color: #00b4ef;
+}
+
+.pull-left a:hover{/*取消默认下划线效果*/
+   text-decoration:none;
+}
+
+
+.pull-left::after{
+  float:left;
+  margin-top: -10px;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color:  #00b4ef;
+  transition: margin-top 0.3s, opacity 0.2s;
+}
+
+
+.pull-left:hover::after{
+  margin-top: 0;
+  opacity: 1;
+}
+</style>
+
+
 </body>
 </html>
