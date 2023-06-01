@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang='zh-CN'>
 <head>
-    <title>用户登录 - 推荐系统</title>
+
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -173,31 +173,32 @@
     </style>
 </head>
 
-
+<body>
 <div class="container">
-    <div class="row">
-        <div class="col-md-offset-3 col-md-6">
+
+
             <form class="form-horizontal" action="/login/" method="POST">
-                <input type="hidden" name="csrfmiddlewaretoken" value="9uexaQHyDKGILiBx1XlNy16PGAMwhBUaunGo6bpJvugx9SHsglJj9OySYHgVOT0I">
-                <span class="heading"><a href="/">推荐系统</a> - 用户登录</span>
-                <span style="color:red;"></span>
 
-                    <div class="form-item">
 
-      <input type="username" name="username" placeholder="用户名"  id="username" class="form-style" autocomplete="  " required>
-{#                        <label class="input-label">用户名</label>#}
+
+<div class="login-box">
+                <div class="login-field">
+
+      <input type="username" name="username"   id="username" class="form-style" autocomplete="  " required>
+      <label>Username</label>
       <span class="error">{{form.username.errors}}</span>
 </div>
 
-<div class="form-item">
+<div class="login-field">
 
-  <input type="password" name="password" placeholder="密码" id="password" class="form-style" autocomplete="  " required id="id_password">
-{#  <label class="input-label">密码</label>#}
+  <input type="password" name="password"  id="password" class="form-style" autocomplete="  " required id="id_password">
+<label>Password</label>
     <span class="error">{{form.password.errors}}</span>
 </div>
                  <div class="form-group">
                     <p class="pull-left"><a href="/register/"><small>注册</small></a></p>
                     <button type="submit" class="btn btn-default">登录</button>
+                 </div>
                  </div>
                 </div>
             </form>
@@ -205,6 +206,7 @@
     </div>
 </div>
 <style>
+
 {#.form-item::placeholder {#}
 {#        color:transparent;#}
 {#    }#}
@@ -221,18 +223,87 @@
 {#    transform:scale(0.75) translate(0,-32px);#}
 {#}#}
 
-div.form-item{
-  position: relative;
-  display: block;
-  margin-bottom: 20px;
- }
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background: url(../img/bg.jpg)  no-repeat center 0px;
+	background-size: cover;
+
+
+
+
+
+}
+.login-box{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 400px;
+	padding:40px;
+	background: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px  25px rgba(0,0,0,.5);
+	border-radius: 10px;
+}
+.login-box h2{
+	margin: 0 0 30px;
+	padding: 0;
+	text-align: center;
+	color: #fff;
+}
+.login-box .login-field{
+	position: relative;
+}
+.login-box .login-field  input{
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background: transparent;
+}
+.login-box .login-field  label{
+	position: absolute;
+	top: 0;
+	left: 0;
+	letter-spacing: 1px;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	pointer-events: none;
+	transition: .5s;
+}
+.login-box .login-field input:focus ~ label,
+.login-box .login-field input:valid ~ label{
+	top: -23px;
+	left: 0;
+	color: #58bff6;
+	font-size: 12px;
+}
+.login-box button{
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #03a9f4;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+
 
  input{transition: all .2s ease;}
  input.form-style{
   position: relative;
-     color:#8a8a8a;
+
   width: 100%;
-  height: 44px;
+  height: 50px;
   padding: 5px 5%;
   border:1px solid #ccc;
   -moz-border-radius: 27px;
@@ -244,75 +315,35 @@ div.form-item{
   background-color: #fff;
   font-family:'HelveticaNeue','Arial', sans-serif;
   font-size: 105%;
+     font-color=#58bff6;
   letter-spacing: .8px;
 
 }
 
-div#form{
-	position: absolute;
-	width:360px;
-	height:320px;
-	height:auto;
-	background-color: #fff;
-	margin:auto;
-	border-radius: 5px;
-	padding:20px;
-	left:50%;
-	top:50%;
-	margin-left:-180px;
-	margin-top:-200px;
-}
-div.form-item .form-style:focus{
+
+div.login-field .form-style:focus{
   outline: none;
   border:1px solid #58bff6;
   color:#58bff6;
 }
 
-div.form-item p.formLabel {
-  position: absolute;
-  left:26px;
-  top:2px;
-  transition:all .4s ease;
-  color:#bbb;
-  }
 
-.formTop{
-  top:-22px !important;
-  left:26px;
-  background-color: #fff;
-  padding:0 5px; font-size: 14px;
-  color:#58bff6 !important;
-}
 
-.formStatus{
-  color:#8a8a8a !important;
-}
-
-div.form-item .form-style:focus{
+div.login-field .form-style:focus{
   outline: none;
   border:1px solid #58bff6;
   color:#58bff6;
 }
 
-div.form-item p.formLabel {
-  position: absolute;
-  left:26px;
-  top:2px;
-  transition:all .4s ease;
-  color:#bbb;
-  }
+.form-group .btn{
+  background-color: #ffffff;
 
-.formTop{
-    top:-22px !important;
-    left:26px;
-    background-color: #fff;
-    padding:0 5px;
-    font-size: 14px;
-    color:#58bff6 !important;
+  color:#58bff6;
 }
+.form-group .btn:hover{
+  background-color: #58bff6;
 
-.formStatus{
-  color:#58bff6 !important;
+  color:#ffffff;
 }
 
 .pull-left{
