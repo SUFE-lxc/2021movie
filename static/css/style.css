@@ -155,7 +155,7 @@ html, body {
 }
 
 body {
-    background: url(../images/bg.jpg) fixed;
+    background: #000000;
     color: #fff;
     font: 14px/25px Arial, Helvetica, sans-serif;
     background-size: 100%;
@@ -226,7 +226,7 @@ header #login input[type="text"] {
 }
 
 header #login input[type="submit"] {
-    background: #fcab2b;
+    background: #58bff6;
     padding: 7px;
     margin-left: 5px;
     color: #fff;
@@ -280,7 +280,7 @@ header #search input[type="text"] {
 }
 
 header #search input[type="submit"] {
-    background: url(../images/search-dark.png) no-repeat 7px 6px #fcab2b;
+    background: url(../images/search-dark.png) no-repeat 7px 6px #58bff6;
     padding: 7px 7px 7px 25px;
     color: #fff;
     font-size: 14px;
@@ -291,8 +291,8 @@ header #search input[type="submit"] {
 }
 
 .logo img {
-    max-height: 80px;
-    display: inline-block;
+    background-image:url(../images/logo.png) ;
+
 }
 
 nav {
@@ -301,12 +301,15 @@ nav {
 }
 
 nav .active a {
-    background: #fcab2b !important;
+
 }
+
+
+
 
 #menu {
     background-color: #000;
-    border-bottom: 4px solid #fcab2b;
+    border-bottom: 4px solid #58bff6;
     text-align: center;
 }
 
@@ -335,7 +338,7 @@ nav .active a {
 }
 
 #menu a:hover {
-    background: #fcab2b;
+    background: #58bff6;
 }
 
 
@@ -388,7 +391,7 @@ header .nav-bar .wrap-nav {
 }
 
 #main-content .title {
-    border-bottom: 2px solid #fcab2b;
+    border-bottom: 2px solid #58bff6;
     margin-bottom: 10px;
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -414,7 +417,7 @@ header .nav-bar .wrap-nav {
 }
 
 #main-content .post h3 {
-    color: #fcab2b;
+    color: #58bff6;
     font-weight: 500;
     margin-bottom: 5px;
     font-size: 19px;
@@ -470,7 +473,7 @@ article .art-header p a {
 }
 
 article .art-header p a:hover {
-    color: #fcab2b;
+    color: #58bff6;
 }
 
 
@@ -530,7 +533,7 @@ article .art-content ol {
 }
 
 .widget .wid-header {
-    border-bottom: 1px solid #fcab2b;
+    border-bottom: 1px solid #58bff6;
     margin-bottom: 30px;
     background-color: #000;
 }
@@ -556,7 +559,7 @@ article .art-content ol {
 .widget.wid-new-updates ul a {
     margin: 5px;
     display: inline-block;
-    color: #fcab2b;
+    color: #58bff6;
     font-size: 16px;
 }
 
@@ -575,14 +578,14 @@ article .art-content ol {
     display: inline;
     margin: 5px;
     float: left;
-    background: #fcab2b;
+    background: #58bff6;
     color: #fff;
     padding: 5px 10px;
 }
 
 .widget.wid-tag a:hover {
     background: #fff;
-    color: #fcab2b;
+    color: #58bff6;
 }
 
 
@@ -599,7 +602,7 @@ article .art-content ol {
 }
 
 .widget.wid-post h6 {
-    color: #fcab2b;
+    color: #58bff6;
 }
 
 .widget.wid-post .wrapper {
@@ -621,7 +624,7 @@ article .art-content ol {
 }
 
 .widget.wid-last-updates h6 {
-    color: #fcab2b;
+    color: #58bff6;
     width: 200px;
     overflow: hidden;
 }
@@ -666,7 +669,7 @@ article .art-content ol {
 
 .widget.wid-meta ul li {
     line-height: 2.8;
-    border-bottom: 2px solid #fcab2b;
+    border-bottom: 2px solid #58bff6;
 }
 
 .widget.wid-meta ul a {
@@ -820,7 +823,7 @@ footer .wrap-bottom {
 }
 
 .page:hover, .page.gradient:hover {
-    background: #fcab2b;
+    background: #58bff6;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FEFEFE), to(#f0f0f0));
     background: -moz-linear-gradient(0% 0% 270deg, #FEFEFE, #f0f0f0);
 }
@@ -844,14 +847,14 @@ footer .wrap-bottom {
 
 .page {
     border: solid 1px #32373b;
-    background: #fcab2b;
+    background: #58bff6;
     box-shadow: inset 0px 1px 1px rgba(255, 255, 255, .1), 0px 1px 3px rgba(0, 0, 0, .1);
     color: #feffff;
     text-shadow: 0px 1px 0px rgba(0, 0, 0, .5);
 }
 
 .page:hover, .page.gradient:hover {
-    background: #fcab2b;
+    background: #58bff6;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#547085), to(#3d4f5d));
     background: -moz-linear-gradient(0% 0% 270deg, #547085, #3d4f5d);
 }
@@ -871,7 +874,7 @@ footer .wrap-bottom {
 /* -------------------------------------Select------------------------------ */
 /* ---------------------------------------------------------------------------- */
 select {
-    border-bottom: 2px solid #fcab2b;
+    border-bottom: 2px solid #58bff6;
     font: bold 13px Arial, Helvetica, Sans-serif;
     color: #777;
     width: 125px;
@@ -890,7 +893,7 @@ a.button,button.button {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     display: inline-block;
-    background: #fcab2b;
+    background: #58bff6;
     padding: 5px 10px;
     text-transform: uppercase;
     color: #fff;
