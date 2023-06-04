@@ -182,6 +182,9 @@
 
 
 <div class="login-box">
+
+                   <span class="heading"><a href="{% url 'index' %}">推荐系统</a> - 用户登录</span>
+                <span style='color:red;'>{{ errormsg }}</span>
                 <div class="login-field">
 
       <input type="username" name="username"   id="username" class="form-style" autocomplete="  " required>
@@ -207,21 +210,6 @@
 </div>
 <style>
 
-{#.form-item::placeholder {#}
-{#        color:transparent;#}
-{#    }#}
-{#.form-item{#}
-{#    position:relative;#}
-{#}#}
-{#.input-label{#}
-{#    position:absolute;#}
-{#    left:16px;top:14px;#}
-{#    pointer-events: none;#}
-{#}#}
-{#.input-fill:not(:placeholder-shown)~.input-label,#}
-{#.input-fill:focus ~ .input-label{#}
-{#    transform:scale(0.75) translate(0,-32px);#}
-{#}#}
 
 body{
 	margin: 0;
@@ -231,7 +219,9 @@ body{
 	background-size: cover;
 
 
-
+.heading{
+    color:#58bff6;
+}
 
 
 }
