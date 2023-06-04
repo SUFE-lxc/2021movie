@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+OPENAI_API_KEY = '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'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -24,7 +24,8 @@ SECRET_KEY = '3r8%azo4sf)2yvl-!pa!lav)ao^6$_eoc_8bhmf-f8!^wypb)!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['movie1.colaplusice.com', 'localhost', '127.0.0.1', '192.168.0.102']
+# ALLOWED_HOSTS = ['movie1.colaplusice.com', 'localhost', '127.0.0.1', '192.168.0.102']
+ALLOWED_HOSTS = []
 
 # Application definitionauth_user_user_permissions
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'movie',
+    'base_app',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +143,4 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

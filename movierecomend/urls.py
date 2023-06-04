@@ -17,11 +17,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
+from base_app.views import query_view
 
 from movie import views
 #用于前后端连接
 urlpatterns = [
                   path("admin/", admin.site.urls),
+                  path('query/', query_view, name='query'),
                   path("", views.index, name="index"),
                   path("login/", views.login, name="login"),
                   path("register/", views.register, name="register"),
