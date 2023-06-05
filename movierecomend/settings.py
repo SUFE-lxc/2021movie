@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = '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'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
